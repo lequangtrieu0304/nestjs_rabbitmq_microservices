@@ -21,7 +21,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api/v1');
 
-  const PORT = process.env.API_GATEWAY_PORT;
+  const PORT: string = process.env.API_GATEWAY_PORT;
   await app.startAllMicroservices();
   await app.listen(PORT);
 

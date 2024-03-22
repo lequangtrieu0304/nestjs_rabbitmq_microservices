@@ -1,8 +1,8 @@
 import {
-  Injectable,
   BadRequestException,
-  NotFoundException,
   Inject,
+  Injectable,
+  NotFoundException,
 } from '@nestjs/common';
 
 import { InjectRepository } from '@nestjs/typeorm';
@@ -31,8 +31,7 @@ export class UsersService {
     if (userExist) throw new BadRequestException('Email đã được sử dụng.');
     userParams.password = await bcrypt.hash(userParams.password, 10);
     const user = this.userRepository.create(userParams);
-    const newUser: IUser = await this.userRepository.save(user);
-    return newUser;
+    return await this.userRepository.save(user);
   }
 
   public async login(loginRequest: {
