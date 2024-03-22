@@ -22,6 +22,7 @@ async function bootstrap() {
     },
   );
   await app.listen();
+  logger.log('-------------------------------');
   logger.log('Microservice Token is listening');
 }
 bootstrap();
