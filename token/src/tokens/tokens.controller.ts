@@ -7,6 +7,8 @@ import { ITokenResponse } from './interfaces/token-response.interface';
 import { ITokenDataResponse } from './interfaces/token-data-response';
 import { ITokenDestroyResponse } from './interfaces/token-destroy-response.interface';
 
+console.log("quangtrieu")
+
 @Controller()
 export class TokensController {
   constructor(private readonly tokensService: TokensService) {}
